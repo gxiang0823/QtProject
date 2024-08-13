@@ -1,7 +1,7 @@
 #include "imageconfiguration.h"
 #include "ui_imageconfiguration.h"
 #include <QCamera>
-#include <QCameraDevice>
+#include <QVideoWidget>
 
 
 ImageConfiguration::ImageConfiguration(QWidget *parent)
@@ -11,7 +11,7 @@ ImageConfiguration::ImageConfiguration(QWidget *parent)
     ui->setupUi(this);
 
     QCamera camera;
-    QCameraViewfinder finder;
+    QVideoWidget finder;
 
 }
 
