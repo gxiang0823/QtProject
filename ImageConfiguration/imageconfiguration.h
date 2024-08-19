@@ -6,6 +6,10 @@
 #include <QVideoWidget>
 #include <QMediaCaptureSession>
 #include <QImageCapture>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QMediaPlayer>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,10 +28,13 @@ public:
 private:
     Ui::ImageConfiguration *ui;
 
-    QCamera *camera;
-    QVideoWidget *finder;
-    QMediaCaptureSession *session;
-    QImageCapture *imageCapture;
+    QMediaPlayer *player;
+    QVideoWidget *videoWidget;
+
+    // QCamera *camera;
+    // QVideoWidget *finder;
+    // QMediaCaptureSession *session;
+    // QImageCapture *imageCapture;
 
 };
 #endif // IMAGECONFIGURATION_H
