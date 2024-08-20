@@ -28,13 +28,11 @@ public:
 private:
     Ui::ImageConfiguration *ui;
 
-    QMediaPlayer *player;
-    QVideoWidget *videoWidget;
+    QCamera *camera;
+    QVideoWidget *finder;
+    QMediaCaptureSession *session;
+    QImageCapture *imageCapture;
 
-    // QCamera *camera;
-    // QVideoWidget *finder;
-    // QMediaCaptureSession *session;
-    // QImageCapture *imageCapture;
 
 };
 #endif // IMAGECONFIGURATION_H

@@ -8,42 +8,31 @@ ImageConfiguration::ImageConfiguration(QWidget *parent)
     ui->setupUi(this);
 
     // 摄像头设置
-    player = new QMediaPlayer;
-    player->setSource(QUrl("http://example.com/myclip1.mp4"));
+    session = new QMediaCaptureSession();
+    camera = new QCamera;
+    session->setCamera(camera);
+    finder = new QVideoWidget();
+    finder->show();
+    session->setVideoOutput(finder);
+    imageCapture = new QImageCapture();
+    session->setImageCapture(imageCapture);
 
-    videoWidget = new QVideoWidget;
-    player->setVideoOutput(videoWidget);
-
-    videoWidget->show();
-    player->play();
-
-
-    // session = new QMediaCaptureSession();
-    // camera = new QCamera;
-    // session->setCamera(camera);
-    // finder = new QVideoWidget();
-    // finder->show();
-    // session->setVideoOutput(finder);
-    // imageCapture = new QImageCapture();
-    // session->setImageCapture(imageCapture);
-
-    // camera->start();
-    // imageCapture->capture();
+    camera->start();
+    imageCapture->capture();
 
     // 界面布局
-    // this->resize(2000,600);
-    // QVBoxLayout *vboxl = new QVBoxLayout;
-    // vboxl->addWidget(ui->label);
-    // vboxl->addWidget(ui->pushButton);
+    QVBoxLayout *vboxl = new QVBoxLayout;
+    vboxl->addWidget(ui->label);
+    vboxl->addWidget(ui->pushButton);
 
-    // QVBoxLayout *vboxr = new QVBoxLayout;
-    // vboxr->addWidget(finder);
-    // vboxr->addWidget(ui->textBrowser);
+    QVBoxLayout *vboxr = new QVBoxLayout;
+    vboxr->addWidget(finder);
+    vboxr->addWidget(ui->textBrowser);
 
-    // QHBoxLayout *hbox = new QHBoxLayout(this);
-    // hbox->addLayout(vboxl);
-    // hbox->addLayout(vboxr);
-    // this->setLayout(hbox);
+    QHBoxLayout *hbox = new QHBoxLayout(this);
+    hbox->addLayout(vboxl);
+    hbox->addLayout(vboxr);
+    this->setLayout(hbox);
 
 
 }
