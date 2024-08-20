@@ -9,6 +9,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QMediaPlayer>
+#include <QMessageBox>
 
 
 QT_BEGIN_NAMESPACE
@@ -21,16 +22,17 @@ class ImageConfiguration : public QWidget
 {
     Q_OBJECT
 
+public slots:
+    void captureImage();
+
 public:
     ImageConfiguration(QWidget *parent = nullptr);
     ~ImageConfiguration();
 
 private:
     Ui::ImageConfiguration *ui;
-
     QCamera *camera;
-    QVideoWidget *finder;
-    QMediaCaptureSession *session;
+    QMediaCaptureSession *captureSession;
     QImageCapture *imageCapture;
 
 
