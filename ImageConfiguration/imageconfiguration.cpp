@@ -10,7 +10,7 @@ ImageConfiguration::ImageConfiguration(QWidget *parent)
     // 摄像头设置
     QVideoWidget *finder = new QVideoWidget(this);
 
-    QPushButton *captureButton = ui->cpatureButton;
+    QPushButton *captureButton = new QPushButton("Capture",this);
 
     camera = new QCamera(this);
 
@@ -28,7 +28,7 @@ ImageConfiguration::ImageConfiguration(QWidget *parent)
     // 界面布局设置
     QVBoxLayout *vboxl = new QVBoxLayout;
     vboxl->addWidget(ui->label);
-    vboxl->addWidget(ui->cpatureButton);
+    vboxl->addWidget(ui->captureButton);
 
     QVBoxLayout *vboxr = new QVBoxLayout;
     vboxr->addWidget(finder);

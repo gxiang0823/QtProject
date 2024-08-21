@@ -38,7 +38,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="cpatureButton">
+  <widget class="QPushButton" name="captureButton">
    <property name="geometry">
     <rect>
      <x>30</x>
