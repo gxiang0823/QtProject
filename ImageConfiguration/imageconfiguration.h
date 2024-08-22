@@ -10,6 +10,7 @@
 #include <QVBoxLayout>
 #include <QMediaPlayer>
 #include <QMessageBox>
+#include <QTextBrowser>
 
 
 QT_BEGIN_NAMESPACE
@@ -22,18 +23,23 @@ class ImageConfiguration : public QWidget
 {
     Q_OBJECT
 
-public slots:
-    void captureImage();
-
 public:
     ImageConfiguration(QWidget *parent = nullptr);
     ~ImageConfiguration();
 
+private slots:
+    void captureImage();
+    void onImageCaptured(int id, QImage preview);
+
 private:
     Ui::ImageConfiguration *ui;
+
     QCamera *camera;
-    QMediaCaptureSession *captureSession;
+    QVideoWidget *finder;
     QImageCapture *imageCapture;
+    QTextBrowser *textBrowser;
+    QPushButton *captureButton;
+    QLabel *imageLabel;
 
 
 };

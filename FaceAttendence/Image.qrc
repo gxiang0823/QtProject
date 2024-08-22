@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>cecrle.png</file>
+        <file>correct.png</file>
+    </qresource>
+</RCC>

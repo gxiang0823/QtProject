@@ -8,48 +8,31 @@ ImageConfiguration::ImageConfiguration(QWidget *parent)
     ui->setupUi(this);
 
     // 摄像头设置
-    QVideoWidget *finder = new QVideoWidget(this);
+    QMediaCaptureSession captureSession;
+    camera = new QCamera;
+    captureSession.setCamera(camera);
 
-    QPushButton *captureButton = ui->cpatureButton;
+    finder = new QVideoWidget();
+    finder->show();
+    captureSession.setVideoOutput(finder);
 
-    camera = new QCamera(this);
+    imageCapture = new QImageCapture;
+    captureSession.setImageCapture(imageCapture);
 
-    captureSession = new QMediaCaptureSession(this);
-    captureSession->setCamera(camera);
-
-    imageCapture = new QImageCapture(this);
-    captureSession->setImageCapture(imageCapture);
-    captureSession->setVideoOutput(finder);
     camera->start();
+    //on shutter button pressed
 
-    connect(captureButton, &QPushButton::clicked,this,&ImageConfiguration::captureImage);
 
 
-    // 界面布局设置
-    QVBoxLayout *vboxl = new QVBoxLayout;
-    vboxl->addWidget(ui->label);
-    vboxl->addWidget(ui->cpatureButton);
-
-    QVBoxLayout *vboxr = new QVBoxLayout;
-    vboxr->addWidget(finder);
-    vboxr->addWidget(ui->textBrowser);
-
-    QHBoxLayout *hbox = new QHBoxLayout(this);
-    hbox->addLayout(vboxl);
-    hbox->addLayout(vboxr);
-    this->setLayout(hbox);
-}
-
-void ImageConfiguration::captureImage()
-{
-    int id = imageCapture->captureToFile("/capture_image.jpg");
-    if (id == -1)
-    {
-        QMessageBox::warning(this, "Capture Error", "Failed to capture image.");
-    }
 }
 
 ImageConfiguration::~ImageConfiguration()
 {
     delete ui;
 }
+
+void ImageConfiguration::captureImage()
+{
+    imageCapture->capture();
+}
+
