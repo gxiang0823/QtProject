@@ -25,6 +25,35 @@
   <property name="windowTitle">
    <string>ImageConfiguration</string>
   </property>
+<<<<<<< HEAD
+=======
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>60</y>
+     <width>331</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="captureButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>390</y>
+     <width>451</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+>>>>>>> bcdd4aaf981325be71b51c15df47ad0bec840326
   <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>

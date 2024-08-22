@@ -12,9 +12,13 @@ ImageConfiguration::ImageConfiguration(QWidget *parent)
     camera = new QCamera;
     captureSession.setCamera(camera);
 
+<<<<<<< HEAD
     finder = new QVideoWidget();
     finder->show();
     captureSession.setVideoOutput(finder);
+=======
+    QPushButton *captureButton = new QPushButton("Capture",this);
+>>>>>>> bcdd4aaf981325be71b51c15df47ad0bec840326
 
     imageCapture = new QImageCapture;
     captureSession.setImageCapture(imageCapture);
@@ -23,6 +27,13 @@ ImageConfiguration::ImageConfiguration(QWidget *parent)
     //on shutter button pressed
 
 
+<<<<<<< HEAD
+=======
+    // 界面布局设置
+    QVBoxLayout *vboxl = new QVBoxLayout;
+    vboxl->addWidget(ui->label);
+    vboxl->addWidget(ui->captureButton);
+>>>>>>> bcdd4aaf981325be71b51c15df47ad0bec840326
 
 }
 
