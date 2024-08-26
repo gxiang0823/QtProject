@@ -29,10 +29,10 @@
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
       <rect>
-       <x>120</x>
+       <x>140</x>
        <y>370</y>
-       <width>201</width>
-       <height>61</height>
+       <width>200</width>
+       <height>60</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -117,10 +117,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <widget class="QLabel" name="headpicLb">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>300</width>
-       <height>300</height>
+       <x>120</x>
+       <y>60</y>
+       <width>240</width>
+       <height>240</height>
       </rect>
      </property>
      <property name="styleSheet">
