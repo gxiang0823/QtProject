@@ -1,4 +1,4 @@
-#include "faceattendence.h"
+#include "Faceattendence.h"
 
 #include <QApplication>
 

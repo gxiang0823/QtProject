@@ -17,12 +17,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #window平台opencv，seetaface环境
 win32{
 # 报错缺失.dll文件要设置环境变量，将opencv的bin文件夹设置Path
-LIBS +=D:\Learning\opencv452\x64\mingw\lib\libopencv*
-LIBS +=D:\Learning\SeetaFace\lib\libSeeta*
-INCLUDEPATH += D:\Learning\opencv452\include
-INCLUDEPATH += D:\Learning\opencv452\include\opencv2
-INCLUDEPATH += D:\Learning\SeetaFace\include
-INCLUDEPATH += D:\Learning\SeetaFace\include\seeta
+
+# siemens
+# LIBS +=D:\Learning\opencv452\x64\mingw\lib\libopencv*
+# LIBS +=D:\Learning\SeetaFace\lib\libSeeta*
+# INCLUDEPATH += D:\Learning\opencv452\include
+# INCLUDEPATH += D:\Learning\opencv452\include\opencv2
+# INCLUDEPATH += D:\Learning\SeetaFace\include
+# INCLUDEPATH += D:\Learning\SeetaFace\include\seeta
+
+# lenovo
+INCLUDEPATH += D:\1_Research\Next_Paper\opencv452\include
+INCLUDEPATH += D:\1_Research\Next_Paper\opencv452\include\opencv2
+INCLUDEPATH += D:\1_Research\Next_Paper\SeetaFace\include
+INCLUDEPATH += D:\1_Research\Next_Paper\SeetaFace\include\seeta
+LIBS +=D:\1_Research\Next_Paper\opencv452\x64\mingw\lib\libopencv*
+LIBS +=D:\1_Research\Next_Paper\SeetaFace\lib\libSeeta*
 }
 
 #linux平台opencv seetaface环境
@@ -42,14 +52,14 @@ INCLUDEPATH += /opt/opencv4-pc/include/seeta
 }
 
 SOURCES += \
-    main.cpp \
-    faceattendence.cpp
+    Faceattendence.cpp \
+    main.cpp
 
 HEADERS += \
-    faceattendence.h
+    Faceattendence.h
 
 FORMS += \
-    faceattendence.ui
+    Faceattendence.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

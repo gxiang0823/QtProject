@@ -1,5 +1,5 @@
-#include "faceattendence.h"
-#include "ui_faceattendence.h"
+#include "Faceattendence.h"
+#include "ui_Faceattendence.h"
 
 FaceAttendence::FaceAttendence(QWidget *parent)
     : QMainWindow(parent)
